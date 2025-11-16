@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(140deg, #0a0f1f, #150028);
+    color: #e0e0e0;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 15px 40px;
+    background: rgba(10, 10, 20, 0.4);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: 0.4s;
+}
+
+header.scrolled {
+    background: rgba(10, 10, 20, 0.8);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+header .logo img {
+    width: 55px;
+    filter: drop-shadow(0 0 8px #00d0ff);
+}
+
+header nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-weight: 500;
+}
+
+.submenu {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #0f0a1d;
+    padding: 10px;
+    border-radius: 8px;
+    top: 25px;
+    list-style: none;
+}
+
+.submenu:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropdown li:hover {
+    background: #1d1133;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #9fe8ff;
+}
+
+.hero-logo {
+    width: 260px;
+    margin-top: 40px;
+    filter: drop-shadow(0 0 12px #00eaff);
+}
+
+.media-section {
+    padding: 100px 40px;
+}
+
+.media-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.media-grid img, .media-grid video {
+    width: 100%;
+    border-radius: 10px;
+    background: #0c0a13;
+    box-shadow: 0 0 12px #13002b;
+}
+
+.contact-section {
+    padding: 60px 40px;
+    text-align: center;
+    background: #090612;
+}
+
+#btnTop {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+    padding: 12px 16px;
+    border: none;
+    background: #00cfff;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+}
+
+#btnTop.visible {
+    display: block;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
