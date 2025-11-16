@@ -1,2 +1,0 @@
-// Archivo listo para futuras funciones
-console.log("CrisorFly Website Loaded");
