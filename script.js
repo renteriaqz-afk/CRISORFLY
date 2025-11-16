@@ -1,4 +1,0 @@
-// Botón flotante animado que regresa al inicio
-document.getElementById("float-btn").addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
