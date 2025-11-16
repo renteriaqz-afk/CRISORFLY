@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRISORFLY</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- === HEADER === -->
+    <header>
+        <div class="logo">CRISORFLY</div>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- === INICIO === -->
+    <section class="inicio">
+        <h1>CRISORFLY</h1>
+        <p>Contenido audiovisual profesional con drones. Fotografía aérea, videos 4K, seguimiento de obras y captura de contenido avanzado.</p>
+    </section>
+
+    <!-- === SERVICIOS === -->
+    <section id="servicios" class="servicios">
+        <h2>Servicios</h2>
+
+        <div class="tarjeta" data-target="foto-menu">
+            <h3>Fotografía Aérea</h3>
+            <p>Imágenes profesionales desde nuevas perspectivas.</p>
+        </div>
+
+        <div class="tarjeta" data-target="video-menu">
+            <h3>Videos 4K</h3>
+            <p>Grabaciones cinematográficas en ultra alta resolución.</p>
+        </div>
+
+        <div class="tarjeta" data-target="obras-menu">
+            <h3>Seguimiento de Obras</h3>
+            <p>Documentación visual de procesos constructivos.</p>
+        </div>
+
+        <!-- === MENÚS DESPLEGABLES === -->
+
+        <!-- Fotografía -->
+        <div id="foto-menu" class="submenu">
+            <h3>Galería de Fotografías</h3>
+            <p>Sube tus fotos a: <strong>/img/fotografia/</strong></p>
+            <div id="galeria-foto" class="galeria"></div>
+        </div>
+
+        <!-- Videos -->
+        <div id="video-menu" class="submenu">
+            <h3>Galería de Videos 4K</h3>
+            <p>Sube tus videos a: <strong>/img/videos/</strong></p>
+            <div id="galeria-video" class="galeria"></div>
+        </div>
+
+        <!-- Obras -->
+        <div id="obras-menu" class="submenu">
+            <h3>Seguimiento de Obras</h3>
+            <p>Sube imágenes o videos a: <strong>/img/obras/</strong></p>
+            <div id="galeria-obras" class="galeria"></div>
+        </div>
+
+    </section>
+
+    <!-- === CONTACTO === -->
+    <section id="contacto" class="contacto">
+        <h2>Ubicación y Contacto</h2>
+        <p>Cali, Colombia</p>
+        <p>Tel: +57 300 000 0000</p>
+        <p>Email: contacto@crisorfly.com</p>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer>
+        <p>© 2025 CRISORFLY – Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
