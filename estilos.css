@@ -16,14 +16,13 @@ body {
 =========================== */
 
 .logo {
-    width: 100%;          /* Ocupa todo el ancho */
-    max-width: 1400px;    /* Controla que no se vea demasiado gigante en pantallas enormes */
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
     display: block;
-    margin: 0 auto;       /* Centrado */
-    margin-top: 20px;
-    animation: fadeLogo 1.8s ease forwards;
+    margin: 20px auto;
     opacity: 0;
-    object-fit: contain;   /* Mantiene proporción sin deformar */
+    animation: fadeLogo 1.8s ease forwards;
 }
 
 @keyframes fadeLogo {
