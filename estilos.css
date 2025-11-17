@@ -9,10 +9,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-    color: white;
-    text-align: center;
-    padding-bottom: 40px;
+    background: red !important;
 }
 
 /* ------------------------------
