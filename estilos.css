@@ -1,152 +1,194 @@
-/* ===========================
+/* ------------------------------
    ESTILOS GENERALES
-=========================== */
-
-body {
+--------------------------------*/
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #0a0f24, #1a1440);
-    color: #d7d7d7;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: white;
     text-align: center;
+    padding-bottom: 40px;
 }
 
-/* ===========================
-   LOGOTIPO
-=========================== */
+/* ------------------------------
+   HEADER
+--------------------------------*/
+header {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.logo {
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    display: block;
-    margin: 20px auto;
+/* Logo centrado y animado */
+.contenedor-logo img {
+    width: 80%;
+    max-width: 450px;
+    animation: flotar 3s ease-in-out infinite, brillo 4s ease-in-out infinite, fadein 1.5s ease forwards;
     opacity: 0;
-    animation: fadeLogo 1.8s ease forwards;
+    filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+    margin-bottom: 15px;
 }
 
-@keyframes fadeLogo {
-    from {
-        opacity: 0;
-        transform: translateY(-30px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* ===========================
-   TITULOS Y TEXTOS
-=========================== */
-
-h1, h2, h3 {
-    margin: 20px 0;
-    color: #ffffff;
-    letter-spacing: 1px;
+/* Títulos */
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: 3px;
 }
 
 .subtitle {
-    margin-top: -10px;
-    font-size: 18px;
+    font-size: 1.1rem;
     opacity: 0.8;
+    margin-bottom: 20px;
 }
 
-/* ===========================
-   SECCIONES
-=========================== */
-
-.intro, .services, .contact {
+/* ------------------------------
+   SECCIÓN INTRO
+--------------------------------*/
+.intro {
     width: 90%;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
-    padding: 20px;
-}
-
-/* ===========================
-   TARJETAS DE SERVICIOS
-=========================== */
-
-.service-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 25px;
-    margin: 15px auto;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 450px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.service-card:hover {
-    transform: scale(1.04);
-    background: rgba(255,255,255,0.07);
-}
-
-/* ===========================
-   PIE DE PAGINA
-=========================== */
-
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    font-size: 14px;
-    opacity: 0.6;
-}
-
-/* ===========================
-   SUBPÁGINAS (fotografía, videos, obras)
-=========================== */
-
-.subpage-header {
-    padding: 40px 20px;
-}
-
-.subpage-content {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* ===========================
-   GALERIA DE FOTOS Y VIDEOS
-=========================== */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
     margin-top: 25px;
 }
 
-.gallery-item {
-    background: rgba(255,255,255,0.05);
-    padding: 10px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
+.intro h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.gallery-item img,
-.gallery-item video {
-    width: 100%;
-    border-radius: 10px;
+.intro p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    line-height: 1.6;
 }
 
-/* ===========================
-   ANIMACIONES
-=========================== */
+/* ------------------------------
+   SERVICIOS
+--------------------------------*/
+.services {
+    margin-top: 40px;
+}
 
-.fade-in {
+.services h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 15px auto;
+    width: 85%;
+    max-width: 420px;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: fadein-up 1.4s ease forwards;
     opacity: 0;
-    transform: translateY(15px);
-    animation: fadeInUp 0.7s ease forwards;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+.service-card:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-5px);
+}
+
+/* ------------------------------
+   SUBPÁGINAS (Galerías)
+--------------------------------*/
+.galeria {
+    margin-top: 40px;
+}
+
+.galeria h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.grid-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 18px;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.grid-img img,
+.grid-img video {
+    width: 100%;
+    border-radius: 12px;
+    background: #111;
+    object-fit: cover;
+    animation: fadein-up 1.2s ease both;
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.6;
+}
+
+/* ------------------------------
+   ANIMACIONES
+--------------------------------*/
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Entrada desde abajo hacia arriba */
+@keyframes fadein-up {
+    from { opacity: 0; transform: translateY(25px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Flotación suave */
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+/* Brillo premium */
+@keyframes brillo {
+    0% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.15)); }
+    50% { filter: drop-shadow(0 0 18px rgba(255,255,255,0.35)); }
+    100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.15)); }
+}
+
+/* ------------------------------
+   RESPONSIVE CELULAR
+--------------------------------*/
+@media (max-width: 600px) {
+
+    .contenedor-logo img {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    header h1 {
+        font-size: 1.9rem;
+    }
+
+    .service-card {
+        width: 92%;
+    }
+
+    .grid-img {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     }
 }
