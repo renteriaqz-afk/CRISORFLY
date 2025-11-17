@@ -1,168 +1,129 @@
 /* --------------------------
-   ESTILOS GENERALES
---------------------------- */
+ESTILOS GENERALES
+--------------------------- /
 body {
-    background: linear-gradient(135deg, #0a1a4f, #2e004f); /* azul rey oscuro → morado oscuro */
-    color: white;
-    text-align: center;
-    padding-bottom: 40px;
-    font-family: "Montserrat", sans-serif;
+background: linear-gradient(135deg, #0a1a4f, #2e004f); / azul rey oscuro a morado oscuro */
+color: white;
+text-align: center;
+padding-bottom: 40px;
 }
 
 /* --------------------------
-   HEADER
+LOGO ANIMADO GRANDE
+--------------------------- */
+.logo-big {
+width: 100%;
+max-width: 900px;
+display: block;
+margin: 0 auto;
+animation: fadeIn 1.2s ease-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------
+ENCABEZADO GENERAL
 --------------------------- */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 50px;
-    position: relative;
+text-align: center;
+background: white;
+padding: 20px 15px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.logo-container {
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+header h1 {
+margin: 10px 0 5px;
+font-size: 2.2rem;
+font-weight: 700;
 }
 
-.logo-small {
-    width: 80px;
-    animation: flotar 3s ease-in-out infinite, fadein 1.2s ease forwards;
-}
-
-/* Título centrado */
-.titulo-principal {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #ffffff; /* blanco tenue sin brillo */
+.subtitle {
+font-size: 1rem;
+color: #666;
+margin-top: -5px;
 }
 
 /* --------------------------
-   SERVICIOS
+SECCIONES
+--------------------------- */
+section {
+padding: 30px 20px;
+max-width: 1100px;
+margin: auto;
+}
+
+h2 {
+text-align: center;
+font-size: 1.8rem;
+margin-bottom: 15px;
+}
+
+/* --------------------------
+TARJETAS DE SERVICIOS
 --------------------------- */
 .services {
-    margin-top: 60px;
-}
-
-.services h2 {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-}
-
-.service-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 20px;
 }
 
 .service-card {
-    background: rgba(255,255,255,0.1);
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
+background: white;
+padding: 25px;
+border-radius: 12px;
+text-align: center;
+cursor: pointer;
+transition: transform 0.25s ease, box-shadow 0.25s ease;
+box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 .service-card:hover {
-    background: rgba(255,255,255,0.2);
-    transform: translateY(-5px);
+transform: translateY(-6px);
+box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 /* --------------------------
-   SUBMENÚS
+CONTACTO
 --------------------------- */
-.submenu {
-    display: none;
-    background: linear-gradient(135deg, #0a1a4f, #2e004f);
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.submenu-content {
-    max-width: 1100px;
-    margin: auto;
-}
-
-.submenu h2 { font-size: 2rem; margin-bottom: 10px; }
-.submenu .descripcion { font-size: 1rem; opacity: 0.85; margin-bottom: 25px; }
-
-.grid-submenu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin-bottom: 20px;
-}
-
-.media-card {
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 5px;
-    width: 100%;
-    text-align: center;
-}
-
-.media-card img,
-.media-card video {
-    width: 100%;
-    border-radius: 8px;
-}
-
-.cerrar {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.cerrar:hover {
-    background: rgba(255,255,255,0.35);
+.contact p {
+text-align: center;
+font-size: 1.1rem;
 }
 
 /* --------------------------
-   CONTACTO
---------------------------- */
-.contact {
-    margin-top: 60px;
-}
-
-.contact h2 { font-size: 2rem; margin-bottom: 15px; }
-.contact p { margin: 5px 0; }
-
-/* --------------------------
-   PIE DE PÁGINA
+PIE DE PÁGINA
 --------------------------- */
 footer {
-    margin-top: 40px;
-    padding: 20px;
-    opacity: 0.6;
-    text-align: center;
+background: #111;
+color: #fff;
+text-align: center;
+padding: 12px 0;
+margin-top: 40px;
 }
 
 /* --------------------------
-   ANIMACIONES
+ESTILO GENERAL PARA SUBPÁGINAS
 --------------------------- */
-@keyframes fadein { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
-@keyframes flotar { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);} }
-
-/* --------------------------
-   RESPONSIVE
---------------------------- */
-@media (max-width:768px){
-    header{flex-direction:column;}
-    .logo-container{position:static; transform:none; margin-bottom:10px;}
-    .grid-submenu{grid-template-columns:repeat(2, 1fr);}
+.subpage-header {
+text-align: center;
+background: white;
+padding: 20px 10px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-@media (max-width:480px){
-    .titulo-principal{font-size:1.6rem;}
-    .service-card{width:90%;}
-    .grid-submenu{grid-template-columns:1fr;}
+.subpage-header h1 {
+font-size: 2rem;
+}
+
+.subpage-content {
+max-width: 900px;
+margin: auto;
+padding: 25px;
+background: white;
+border-radius: 12px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
