@@ -1,163 +1,90 @@
 /* ------------------------------
    ESTILOS GENERALES
 --------------------------------*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
-}
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Montserrat",sans-serif; }
 
 body {
-    background: linear-gradient(to top, #0b0f30, #1f003c); /* azul oscuro a morado oscuro */
+    background: linear-gradient(to top, #0b0f30, #1f003c);
     color: white;
     text-align: center;
     padding-bottom: 40px;
 }
 
-/* ------------------------------
-   HEADER - LOGO LATERAL
---------------------------------*/
+/* ---------------- HEADER ---------------- */
 header {
     display: flex;
     align-items: center;
-    justify-content: center; /* centrado horizontal */
+    justify-content: center;
     padding: 20px 50px;
+    position: relative;
 }
 
 .contenedor-logo {
-    flex: 0 0 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .contenedor-logo img {
-    width: 100%;
-    max-width: 180px;
+    width: 120px;
     animation: flotar 3s ease-in-out infinite, fadein 1.5s ease forwards;
     opacity: 0;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.15));
-    margin-bottom: 15px;
 }
 
-.texto-logo {
-    margin-left: 30px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.texto-logo h1 {
+.titulo-principal {
     font-size: 2rem;
     font-weight: 800;
-    color: #ffffff; /* blanco tenue sin brillo */
-    text-shadow: none;
+    color: #ffffff;
 }
 
-.texto-logo p.subtitle {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    margin-top: 5px;
-}
-
-/* ------------------------------
-   SECCIÓN INTRO
---------------------------------*/
-.intro {
-    width: 90%;
-    max-width: 900px;
-    margin: 40px auto 0 auto;
-    text-align: center;
-}
-
-.intro h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    line-height: 1.6;
-}
-
-/* ------------------------------
-   SERVICIOS
---------------------------------*/
+/* ---------------- SERVICIOS ---------------- */
 .services {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .services h2 {
     font-size: 2.2rem;
     margin-bottom: 30px;
-    font-weight: 700;
-    text-align: center;
 }
 
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.service-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    justify-items: center; /* centra los cards */
 }
 
 .service-card {
     background: rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 15px;
+    padding: 20px 40px;
+    border-radius: 12px;
     cursor: pointer;
     transition: 0.3s;
     text-align: center;
 }
 
-.service-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.service-card:hover {
+    background: rgba(255,255,255,0.18);
 }
 
-.service-card h3 {
-    margin-bottom: 8px;
-}
-
-.service-card p {
-    font-size: 0.95rem;
-    opacity: 0.85;
-}
-
-/* ------------------------------
-   GALERÍA
---------------------------------*/
-.galeria {
-    margin-top: 40px;
-}
-
-.galeria h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+/* ---------------- SUBMENÚ ---------------- */
+.submenu {
+    display: none;
+    background: linear-gradient(to top, #0b0f30, #1f003c);
+    padding: 40px 20px;
     text-align: center;
 }
 
-.grid-img {
+.submenu h2 { font-size: 2rem; margin-bottom: 15px; }
+.submenu .descripcion { font-size: 1rem; opacity: 0.85; margin-bottom: 25px; }
+
+.grid-submenu {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
     gap: 20px;
-    width: 90%;
     max-width: 1200px;
     margin: auto;
-}
-
-.media-card {
-    background: rgba(255,255,255,0.05);
-    padding: 10px;
-    border-radius: 12px;
-    text-align: center;
 }
 
 .media-card img,
@@ -167,78 +94,37 @@ header {
     margin-bottom: 8px;
 }
 
-/* ------------------------------
-   CONTACTO
---------------------------------*/
-.contact {
-    margin-top: 40px;
-    text-align: center;
+.cerrar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
 }
 
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+.cerrar:hover { background: rgba(255,255,255,0.4); }
+
+/* ---------------- CONTACTO ---------------- */
+.contact { margin-top: 60px; }
+.contact h2 { font-size: 2rem; margin-bottom: 15px; }
+.contact p { margin: 5px 0; }
+
+/* ---------------- FOOTER ---------------- */
+footer { margin-top: 40px; padding: 20px; opacity:0.6; text-align:center; }
+
+/* ---------------- ANIMACIONES ---------------- */
+@keyframes fadein { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes flotar { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width:768px){
+    header{flex-direction:column;}
+    .contenedor-logo{position:static; transform:none; margin-bottom:15px;}
 }
-
-.contact p {
-    margin: 5px 0;
-}
-
-/* ------------------------------
-   FOOTER
---------------------------------*/
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    opacity: 0.6;
-    text-align: center;
-}
-
-/* ------------------------------
-   ANIMACIONES
---------------------------------*/
-@keyframes fadein {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadein-up {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Entrada animada para header, intro, servicios y contacto */
-header { animation: fadein-up 1s ease forwards; }
-.intro { animation: fadein-up 1s ease forwards; animation-delay: 0.5s; }
-.services .service-card { animation: fadein-up 1s ease forwards; }
-.galeria .media-card { animation: fadein-up 1s ease forwards; }
-.contact { animation: fadein-up 1s ease forwards; animation-delay: 0.5s; }
-
-/* ------------------------------
-   RESPONSIVE
---------------------------------*/
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-    .texto-logo {
-        margin-left: 0;
-        text-align: center;
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .contenedor-logo img { max-width: 120px; }
-    .texto-logo h1 { font-size: 1.6rem; }
-    .texto-logo p.subtitle { font-size: 1rem; }
-    .cards-container, .grid-img {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    }
+@media (max-width:480px){
+    .titulo-principal{font-size:1.6rem;}
+    .service-card{width:90%;}
+    .grid-submenu{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
 }
