@@ -1,57 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRISORFLY</title>
-    <link rel="stylesheet" href="estilos.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRISORFLY</title>
+<link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Crisorfly" class="logo">
-        <h1>CRISORFLY</h1>
-        <p class="subtitle">Perspectivas aéreas profesionales</p>
-    </header>
 
-    <section class="intro">
-        <h2>¿Quiénes somos?</h2>
-        <p>
-            Crisorfly es un emprendimiento dedicado a la producción de contenido audiovisual mediante drones,
-            ofreciendo fotografía y video aéreo para publicidad, seguimiento de obras y cubrimiento de eventos.
-            Nuestro objetivo es captar nuevas perspectivas visuales para potenciar la comunicación y promoción de nuestros clientes.
-        </p>
-    </section>
+<!-- ---------------- HEADER ---------------- -->
+<header>
+    <div class="logo-container">
+        <img src="CRISORFLY/logo.png" alt="Logo Crisorfly" class="logo-small">
+    </div>
+    <h1 class="titulo-principal">CRISORFLY</h1>
+</header>
 
-    <section id="servicios" class="services">
-        <h2>Servicios</h2>
-
-        <div class="service-card" onclick="location.href='fotografia.html'">
+<!-- ---------------- SERVICIOS ---------------- -->
+<section class="services">
+    <h2>Servicios</h2>
+    <div class="service-list">
+        <div class="service-card" onclick="mostrarSubmenu('foto')">
             <h3>Fotografía Aérea</h3>
-            <p>Capturas profesionales desde el cielo en alta resolución.</p>
         </div>
-
-        <div class="service-card" onclick="location.href='videos.html'">
+        <div class="service-card" onclick="mostrarSubmenu('video')">
             <h3>Videos 4K</h3>
-            <p>Grabaciones aéreas en ultra alta definición listas para proyectos audiovisuales.</p>
         </div>
-
-        <div class="service-card" onclick="location.href='obras.html'">
+        <div class="service-card" onclick="mostrarSubmenu('obras')">
             <h3>Seguimiento de Obras</h3>
-            <p>Control visual del avance de tus proyectos mediante vuelos programados.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contacto" class="contact">
-        <h2>Contacto</h2>
-        <p><strong>Ubicación:</strong> Cali, Valle del Cauca, Colombia</p>
-        <p><strong>Teléfono:</strong> +57 315 2629782</p>
-    </section>
+<!-- ---------------- SUBMENÚS ---------------- -->
+<section class="submenu" id="foto">
+    <div class="submenu-content">
+        <h2>Fotografía Aérea</h2>
+        <p class="descripcion">Capturas profesionales desde el cielo mostrando nuevas perspectivas.</p>
+        <div class="grid-submenu">
+            <div class="media-card"><img src="foto1.jpg" alt=""><p>Descripción 1</p></div>
+            <div class="media-card"><img src="foto2.jpg" alt=""><p>Descripción 2</p></div>
+            <div class="media-card"><img src="foto3.jpg" alt=""><p>Descripción 3</p></div>
+            <div class="media-card"><img src="foto4.jpg" alt=""><p>Descripción 4</p></div>
+            <div class="media-card"><img src="foto5.jpg" alt=""><p>Descripción 5</p></div>
+            <div class="media-card"><img src="foto6.jpg" alt=""><p>Descripción 6</p></div>
+        </div>
+        <button class="cerrar" onclick="cerrarSubmenu('foto')">Cerrar</button>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2025 CRISORFLY — Cristian Orozco</p>
-    </footer>
+<section class="submenu" id="video">
+    <div class="submenu-content">
+        <h2>Videos 4K</h2>
+        <p class="descripcion">Grabaciones aéreas en ultra alta definición para tus proyectos audiovisuales.</p>
+        <div class="grid-submenu">
+            <div class="media-card"><video src="video1.mp4" controls></video><p>Descripción 1</p></div>
+            <div class="media-card"><video src="video2.mp4" controls></video><p>Descripción 2</p></div>
+            <div class="media-card"><video src="video3.mp4" controls></video><p>Descripción 3</p></div>
+            <div class="media-card"><video src="video4.mp4" controls></video><p>Descripción 4</p></div>
+            <div class="media-card"><video src="video5.mp4" controls></video><p>Descripción 5</p></div>
+            <div class="media-card"><video src="video6.mp4" controls></video><p>Descripción 6</p></div>
+        </div>
+        <button class="cerrar" onclick="cerrarSubmenu('video')">Cerrar</button>
+    </div>
+</section>
 
-<script src="script.js"></script>
+<section class="submenu" id="obras">
+    <div class="submenu-content">
+        <h2>Seguimiento de Obras</h2>
+        <p class="descripcion">Control visual del avance de tus proyectos mediante vuelos programados.</p>
+        <div class="grid-submenu">
+            <div class="media-card"><img src="obra1.jpg" alt=""><p>Descripción 1</p></div>
+            <div class="media-card"><img src="obra2.jpg" alt=""><p>Descripción 2</p></div>
+            <div class="media-card"><img src="obra3.jpg" alt=""><p>Descripción 3</p></div>
+            <div class="media-card"><img src="obra4.jpg" alt=""><p>Descripción 4</p></div>
+            <div class="media-card"><img src="obra5.jpg" alt=""><p>Descripción 5</p></div>
+            <div class="media-card"><img src="obra6.jpg" alt=""><p>Descripción 6</p></div>
+        </div>
+        <button class="cerrar" onclick="cerrarSubmenu('obras')">Cerrar</button>
+    </div>
+</section>
+
+<!-- ---------------- CONTACTO ---------------- -->
+<section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p><strong>Ubicación:</strong> Cali, Valle del Cauca, Colombia</p>
+    <p><strong>Teléfono:</strong> +57 315 2629782</p>
+</section>
+
+<!-- ---------------- FOOTER ---------------- -->
+<footer>
+    <p>© 2025 CRISORFLY — Cristian Orozco</p>
+</footer>
+
+<script>
+function mostrarSubmenu(id) {
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function cerrarSubmenu(id) {
+    document.getElementById(id).style.display = 'none';
+}
+</script>
+
 </body>
 </html>
