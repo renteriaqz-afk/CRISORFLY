@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crisorfly - Drones Profesionales</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">Crisorfly</div>
+    <nav>
+        <a href="#home">Inicio</a>
+        <a href="#services">Servicios</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h1>Capturamos nuevas perspectivas</h1>
+    <p>Crisorfly ofrece fotografía y video profesional mediante drones para publicidad, seguimiento de obras y eventos.</p>
+    <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Nuestros Servicios</button>
+</section>
+
+<section class="services" id="services">
+    <div class="service-card" onclick="openService('fotografia')">
+        <h2>Fotografía Aérea</h2>
+        <p>Captura imágenes profesionales desde nuevas perspectivas.</p>
+    </div>
+    <div class="service-card" onclick="openService('videos')">
+        <h2>Videos 4K</h2>
+        <p>Grabaciones aéreas de alta calidad para cualquier proyecto.</p>
+    </div>
+    <div class="service-card" onclick="openService('obras')">
+        <h2>Seguimiento de Obras</h2>
+        <p>Documentamos el progreso de tus proyectos constructivos.</p>
+    </div>
+</section>
+
+<section class="service-content" id="fotografia">
+    <h3>Fotografía Aérea</h3>
+    <div class="gallery">
+        <div class="gallery-item"><img src="img/ejemplo1.jpg" alt="Foto 1"></div>
+        <div class="gallery-item"><img src="img/ejemplo2.jpg" alt="Foto 2"></div>
+        <div class="gallery-item"><img src="img/ejemplo3.jpg" alt="Foto 3"></div>
+    </div>
+</section>
+
+<section class="service-content" id="videos">
+    <h3>Videos 4K</h3>
+    <div class="gallery">
+        <div class="gallery-item"><video controls src="videos/ejemplo1.mp4"></video></div>
+        <div class="gallery-item"><video controls src="videos/ejemplo2.mp4"></video></div>
+        <div class="gallery-item"><video controls src="videos/ejemplo3.mp4"></video></div>
+    </div>
+</section>
+
+<section class="service-content" id="obras">
+    <h3>Seguimiento de Obras</h3>
+    <div class="gallery">
+        <div class="gallery-item"><video controls src="videos/ejemplo1.mp4"></video></div>
+        <div class="gallery-item"><video controls src="videos/ejemplo2.mp4"></video></div>
+        <div class="gallery-item"><video controls src="videos/ejemplo3.mp4"></video></div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h3>Contacto</h3>
+    <form>
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Mensaje" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<script src="js/script.js"></script>
+</body>
+</html>

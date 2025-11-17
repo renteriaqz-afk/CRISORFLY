@@ -1,0 +1,24 @@
+// Scroll header
+window.addEventListener('scroll', function(){
+    const header = document.getElementById('header');
+    window.scrollY > 50 ? header.classList.add('scrolled') : header.classList.remove('scrolled');
+});
+
+// Abrir sub-menús con animación secuencial
+function openService(id){
+    document.querySelectorAll('.service-content').forEach(section=>{
+        section.classList.remove('active');
+        section.querySelectorAll('.gallery-item').forEach(item=>{
+            item.style.opacity=0; item.style.transform='translateY(20px)';
+        });
+    });
+
+    const section=document.getElementById(id);
+    section.classList.add('active');
+    section.scrollIntoView({behavior:'smooth'});
+
+    // Animación secuencial gallery items
+    section.querySelectorAll('.gallery-item').forEach((item,index)=>{
+        setTimeout(()=>{item.style.opacity=1; item.style.transform='translateY(0)';}, index*150);
+    });
+}
