@@ -1,189 +1,129 @@
-/* ------------------------------
+/* --------------------------
    ESTILOS GENERALES
---------------------------------*/
+--------------------------- */
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #0a0f24, #1a1440);
-    color: #d7d7d7;
-    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
 }
 
-/* ------------------------------
-   HEADER
---------------------------------*/
+/* --------------------------
+   LOGO ANIMADO GRANDE
+--------------------------- */
+.logo-big {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------
+   ENCABEZADO GENERAL
+--------------------------- */
 header {
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 20px 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Logo centrado y animado */
-.contenedor-logo img {
-    width: 80%;
-    max-width: 450px;
-    animation: flotar 3s ease-in-out infinite, brillo 4s ease-in-out infinite, fadein 1.5s ease forwards;
-    opacity: 0;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
-    margin-bottom: 15px;
-}
-
-/* Títulos */
 header h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    letter-spacing: 3px;
+    margin: 10px 0 5px;
+    font-size: 2.2rem;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-size: 1.1rem;
-    opacity: 0.8;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #666;
+    margin-top: -5px;
 }
 
-/* ------------------------------
-   SECCIÓN INTRO
---------------------------------*/
-.intro {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
-    margin-top: 25px;
-}
-
-.intro h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    line-height: 1.6;
-}
-
-/* ------------------------------
-   SERVICIOS
---------------------------------*/
-.services {
-    margin-top: 40px;
-}
-
-.services h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 700;
-}
-
-.service-card {
-    background: rgba(255,255,255,0.08);
-    border-radius: 14px;
-    padding: 18px;
-    margin: 15px auto;
-    width: 85%;
-    max-width: 420px;
-    cursor: pointer;
-    transition: 0.3s;
-    animation: fadein-up 1.4s ease forwards;
-    opacity: 0;
-}
-
-.service-card:hover {
-    background: rgba(255,255,255,0.18);
-    transform: translateY(-5px);
-}
-
-/* ------------------------------
-   SUBPÁGINAS (Galerías)
---------------------------------*/
-.galeria {
-    margin-top: 40px;
-}
-
-.galeria h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.grid-img {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 18px;
-    width: 90%;
+/* --------------------------
+   SECCIONES
+--------------------------- */
+section {
+    padding: 30px 20px;
     max-width: 1100px;
     margin: auto;
 }
 
-.grid-img img,
-.grid-img video {
-    width: 100%;
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* --------------------------
+   TARJETAS DE SERVICIOS
+--------------------------- */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 25px;
     border-radius: 12px;
-    background: #111;
-    object-fit: cover;
-    animation: fadein-up 1.2s ease both;
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* ------------------------------
-   FOOTER
---------------------------------*/
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* --------------------------
+   CONTACTO
+--------------------------- */
+.contact p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --------------------------
+   PIE DE PÁGINA
+--------------------------- */
 footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 12px 0;
     margin-top: 40px;
-    padding: 20px;
-    opacity: 0.6;
 }
 
-/* ------------------------------
-   ANIMACIONES
---------------------------------*/
-@keyframes fadein {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+/* --------------------------
+   ESTILO GENERAL PARA SUBPÁGINAS
+--------------------------- */
+.subpage-header {
+    text-align: center;
+    background: white;
+    padding: 20px 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Entrada desde abajo hacia arriba */
-@keyframes fadein-up {
-    from { opacity: 0; transform: translateY(25px); }
-    to   { opacity: 1; transform: translateY(0); }
+.subpage-header h1 {
+    font-size: 2rem;
 }
 
-/* Flotación suave */
-@keyframes flotar {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-    100% { transform: translateY(0); }
-}
-
-/* Brillo premium */
-@keyframes brillo {
-    0% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.15)); }
-    50% { filter: drop-shadow(0 0 18px rgba(255,255,255,0.35)); }
-    100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.15)); }
-}
-
-/* ------------------------------
-   RESPONSIVE CELULAR
---------------------------------*/
-@media (max-width: 600px) {
-
-    .contenedor-logo img {
-        width: 95%;
-        max-width: 350px;
-    }
-
-    header h1 {
-        font-size: 1.9rem;
-    }
-
-    .service-card {
-        width: 92%;
-    }
-
-    .grid-img {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    }
+.subpage-content {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
