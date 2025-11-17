@@ -12,8 +12,8 @@ body {
    LOGO ANIMADO GRANDE
 --------------------------- */
 .logo-big {
-    width: 100%;
-    max-width: 900px;
+    width: 40%; /* reducido respecto al 100% anterior */
+    max-width: 350px; /* límite máximo más pequeño */
     display: block;
     margin: 0 auto;
     animation: fadeIn 1.2s ease-out;
