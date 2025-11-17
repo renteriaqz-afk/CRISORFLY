@@ -16,9 +16,11 @@ body {
 =========================== */
 
 .logo {
-    width: 95%;
-    max-width: 900px;
-    margin-top: 20px;
+    width: 250px;           /* Tamaño profesional y controlado */
+    max-width: 80%;         /* Evita que se deforme en pantallas pequeñas */
+    display: block;         /* Necesario para centrarlo */
+    margin: 20px auto 30px; /* Lo centra en pantalla */
+    height: auto;
     animation: fadeLogo 1.8s ease forwards;
     opacity: 0;
 }
