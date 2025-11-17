@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seguimiento de Obras - CRISORFLY</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo Crisorfly" class="logo" />
+    <h1>Seguimiento de Obras</h1>
+    <p>Sube imágenes a <strong>img/obras/</strong> y videos a <strong>video/obras/</strong></p>
+    <button onclick="location.href='index.html'" class="btn-back">Regresar</button>
+  </header>
+
+  <main class="media-page">
+    <section>
+      <h2>Imágenes de obras</h2>
+      <div id="galeria-obras-imagenes" class="gallery-grid"></div>
+    </section>
+
+    <section style="margin-top:30px;">
+      <h2>Videos de obra</h2>
+      <div id="galeria-obras-videos" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 CRISORFLY — Cristian Orozco</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Carga al abrir la página: imágenes desde img/obras y videos desde video/obras
+    window.addEventListener('DOMContentLoaded', () => {
+      loadFolderIntoGrid('img/obras/', 'galeria-obras-imagenes');
+      loadFolderIntoGrid('video/obras/', 'galeria-obras-videos');
+    });
+  </script>
+</body>
+</html>
