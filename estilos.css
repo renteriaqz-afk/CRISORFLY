@@ -9,43 +9,55 @@
 }
 
 body {
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    /* Fondo desvanecido vertical azul rey a morado oscuro */
+    background: linear-gradient(to top, #1a237e, #4a148c); /* azul rey a morado oscuro */
     color: white;
-    text-align: center;
+    text-align: left;
     padding-bottom: 40px;
 }
 
 /* ------------------------------
-   HEADER
+   HEADER - LOGO LATERAL
 --------------------------------*/
 header {
-    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.contenedor-logo {
+    flex: 0 0 180px; /* Ancho fijo del logo */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Logo centrado y animado */
 .contenedor-logo img {
-    width: 80%;
-    max-width: 450px;
+    width: 100%;
+    max-width: 180px;
     animation: flotar 3s ease-in-out infinite, brillo 4s ease-in-out infinite, fadein 1.5s ease forwards;
     opacity: 0;
     filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
     margin-bottom: 15px;
 }
 
-/* Títulos */
-header h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    letter-spacing: 3px;
+/* Títulos al lado del logo */
+.texto-logo {
+    margin-left: 30px;
 }
 
-.subtitle {
+.texto-logo h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+}
+
+.texto-logo p {
     font-size: 1.1rem;
     opacity: 0.8;
-    margin-bottom: 20px;
+    margin-top: 5px;
 }
 
 /* ------------------------------
@@ -54,8 +66,7 @@ header h1 {
 .intro {
     width: 90%;
     max-width: 900px;
-    margin: auto;
-    margin-top: 25px;
+    margin: 40px auto 0 auto;
 }
 
 .intro h2 {
@@ -150,20 +161,17 @@ footer {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Entrada desde abajo hacia arriba */
 @keyframes fadein-up {
     from { opacity: 0; transform: translateY(25px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Flotación suave */
 @keyframes flotar {
     0% { transform: translateY(0); }
     50% { transform: translateY(-12px); }
     100% { transform: translateY(0); }
 }
 
-/* Brillo premium */
 @keyframes brillo {
     0% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.15)); }
     50% { filter: drop-shadow(0 0 18px rgba(255,255,255,0.35)); }
@@ -173,15 +181,34 @@ footer {
 /* ------------------------------
    RESPONSIVE CELULAR
 --------------------------------*/
-@media (max-width: 600px) {
-
-    .contenedor-logo img {
-        width: 95%;
-        max-width: 350px;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
     }
 
-    header h1 {
-        font-size: 1.9rem;
+    .texto-logo {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .contenedor-logo img {
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-logo img {
+        max-width: 120px;
+    }
+
+    .texto-logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .texto-logo p {
+        font-size: 1rem;
     }
 
     .service-card {
